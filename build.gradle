@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.2.4'  // Latest stable as of March 2025
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = "com.example.crawler"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jsoup:jsoup:1.17.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+//
+//application {
+//    mainClass = "com.example.crawler.CrawlerApplication"
+//}
+
+application {
+    mainClass = "com.example.crawler.Main"
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
